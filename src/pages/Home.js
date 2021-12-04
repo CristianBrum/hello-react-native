@@ -30,27 +30,25 @@ export function Home() {
     }
   }, []);
   return (
-    <>
-      <View style={styles.container}>
-        <Text style={styles.title}>Todo list</Text>
-        <Text style={styles.greettings}>{greetting}</Text>
+    <View style={styles.container}>
+      <Text style={styles.title}>Todo list</Text>
+      <Text style={styles.greettings}>{greetting}</Text>
 
-        <TextInput
-          style={styles.input}
-          placeholder="New task"
-          placeholderTextColor="#555"
-          onChangeText={setNewSkill}
-        />
-        <Button onPress={handleAddNewSkill} />
-        <Text style={[styles.title, {marginVertical: 50}]}>My Tasks</Text>
+      <TextInput
+        style={styles.input}
+        placeholder="New task"
+        placeholderTextColor="#555"
+        onChangeText={setNewSkill}
+      />
+      <Button onPress={handleAddNewSkill} />
+      <Text style={[styles.title, {marginVertical: 50}]}>My Tasks</Text>
 
-        <FlatList
-          data={mySkills}
-          keyExtractor={(_item, index) => index.toString()}
-          renderItem={({item}) => <SkillCard skill={item} />}
-        />
-      </View>
-    </>
+      <FlatList
+        data={mySkills}
+        keyExtractor={(_item, index) => index.toString()}
+        renderItem={({item}) => <SkillCard skill={item} />}
+      />
+    </View>
   );
 }
 
